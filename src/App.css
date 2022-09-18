@@ -1,38 +1,65 @@
 .App {
-  text-align: center;
+  min-width: 400px;
+  max-width: 900px;
+  margin: 40px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-name, .form-timezone {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.input-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  max-width: 160px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.btn-add {
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.clock-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clock {
+  width: 100px;
+  border: solid 1px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 40px;
+}
+
+.btn-del {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -15px;
+  top: -15px;
+  border-radius: 50%;
+  border: 1px solid black;
+  transition: .2s;
+  background-color: #fff;
+  cursor: pointer;
+  color: red;
+  font-size: 17px;
 }
