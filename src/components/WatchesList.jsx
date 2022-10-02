@@ -1,18 +1,25 @@
-import PropTypes from 'prop-types'
 import Clock from './Clock';
 
-function WatchesList({ clocks, onDelete }) {
-  const clockList = clocks.map((item) => <Clock className='clock' key={item.id} onDelete={onDelete} time={item} />)
+function WatchesList(props) {
+  const { clocks, onDelete } = props;
+
+  const elements = clocks.map((item) => {
+    const { id } = item;
+    return (
+      <Clock
+        className='clock'
+        key={id}
+        item={item}
+        onDelete={() => onDelete(id)}
+      />
+    );
+  });
 
   return (
     <div className='clock-list'>
-      {clockList}
-    </div>
-  )
+      {elements}
+   </div>
+  );
 }
 
-WatchesList.propTypes = {
-  clocks: PropTypes.array
-}
-
-export default WatchesList
+export default WatchesList;
